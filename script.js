@@ -1,50 +1,51 @@
 
-// ==============================
 // LITHEESH RESUME - JAVASCRIPT
-// ==============================
 
-// Print or save resume as PDF
-const printBtn = document.getElementById("printBtn");
+document.addEventListener("DOMContentLoaded", () => {
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
 
-printBtn.addEventListener("click", function () {
-    window.print();
-});
+    navLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            const targetId = link.getAttribute("href");
+            const target = document.querySelector(targetId);
 
-// Profile image fallback
-const profileImage = document.getElementById("profileImage");
-const profileFallback = document.getElementById("profileFallback");
+            if (target) {
+                event.preventDefault();
 
-function showFallback() {
-    profileImage.style.display = "none";
-    profileFallback.style.display = "block";
-}
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
+    });
 
-function showProfileImage() {
-    profileImage.style.display = "block";
-    profileFallback.style.display = "none";
-}
+    // Highlight the current section in navigation
+    const sections = document.querySelectorAll(
+        "#summary, #education, #skills, #projects, #events, #certifications, #contact"
+    );
 
-profileImage.addEventListener("load", showProfileImage);
-profileImage.addEventListener("error", showFallback);
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach((link) => {
+                            link.classList.toggle(
+                                "active",
+                                link.getAttribute("href") ===
+                                "#" + entry.target.id
+                            );
+                        });
+                    }
+                });
+            },
+            {
+                rootMargin: "-20% 0px -65% 0px"
+            }
+        );
 
-// Check whether profile image exists
-if (profileImage.complete) {
-    if (profileImage.naturalWidth > 0) {
-        showProfileImage();
-    } else {
-        showFallback();
+        sections.forEach((section) => observer.observe(section));
     }
-}
-
-// Pause marquee when the page is not visible
-document.addEventListener("visibilitychange", function () {
-    const marquee = document.querySelector(".marquee-track");
-
-    if (!marquee) return;
-
-    marquee.style.animationPlayState =
-        document.hidden ? "paused" : "";
 });
-
-// Update the browser title
-document.title = "Litheesh | Professional Resume";
