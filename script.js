@@ -1,14 +1,16 @@
-
-// LITHEESH RESUME - JAVASCRIPT
+// LITHEESH RESUME — navigation behavior
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
+    const navLinks = document.querySelectorAll(
+        '.navbar a[href^="#"]'
+    );
 
+    // Smooth navigation when clicking section names
     navLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
-            const targetId = link.getAttribute("href");
-            const target = document.querySelector(targetId);
+            const target = document.querySelector(
+                link.getAttribute("href")
+            );
 
             if (target) {
                 event.preventDefault();
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Highlight the current section in navigation
+    // Highlight the active navigation section
     const sections = document.querySelectorAll(
         "#summary, #education, #skills, #projects, #events, #certifications, #contact"
     );
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             link.classList.toggle(
                                 "active",
                                 link.getAttribute("href") ===
-                                "#" + entry.target.id
+                                    "#" + entry.target.id
                             );
                         });
                     }
@@ -46,6 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-        sections.forEach((section) => observer.observe(section));
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
     }
 });

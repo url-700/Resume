@@ -1,9 +1,3 @@
-
-/* ==================================
-   LITHEESH RESUME
-   Lime + Dark Green Theme
-================================== */
-
 :root {
     --lime: #c9ff72;
     --lime-light: #edffd5;
@@ -41,7 +35,6 @@ body {
 }
 
 /* NAVIGATION */
-
 .navbar {
     position: sticky;
     top: 0;
@@ -63,7 +56,6 @@ body {
     text-decoration: none;
     font-size: 13px;
     font-weight: 700;
-    transition: color 0.2s;
 }
 
 .navbar a:hover,
@@ -71,8 +63,7 @@ body {
     color: var(--green);
 }
 
-/* MARQUEE */
-
+/* MOVING MARQUEE TITLE */
 .marquee {
     overflow: hidden;
     white-space: nowrap;
@@ -117,8 +108,7 @@ body {
     }
 }
 
-/* PAGE CONTAINER */
-
+/* MAIN CONTAINER */
 .container {
     width: min(1200px, 96%);
     margin: 0 auto 20px;
@@ -126,19 +116,27 @@ body {
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 15px 45px rgba(42, 87, 20, 0.10);
+    box-shadow: 0 15px 45px rgba(42, 87, 20, 0.1);
 }
 
-/* PROFILE */
-
+/* PROFILE HEADER */
 .profile-header {
     display: flex;
     align-items: center;
     gap: 32px;
     padding: 42px 6%;
     background:
-        radial-gradient(circle at 95% 10%, #f6ffdc 0, transparent 28%),
-        linear-gradient(115deg, #c5ff82, #edffd1 62%, #d5ffad);
+        radial-gradient(
+            circle at 95% 10%,
+            #f6ffdc 0,
+            transparent 28%
+        ),
+        linear-gradient(
+            115deg,
+            #c5ff82,
+            #edffd1 62%,
+            #d5ffad
+        );
     border-bottom: 2px solid white;
 }
 
@@ -229,8 +227,7 @@ body {
     font-weight: 700;
 }
 
-/* SECTIONS */
-
+/* SECTION DESIGN */
 .section {
     padding: 30px;
     margin: 15px;
@@ -262,7 +259,11 @@ body {
     flex: 1;
     padding: 4px 15px;
     color: white;
-    background: linear-gradient(90deg, var(--dark-green), #12632e);
+    background: linear-gradient(
+        90deg,
+        var(--dark-green),
+        #12632e
+    );
     border-radius: 0 25px 25px 0;
     font-size: 20px;
     line-height: 1.5;
@@ -280,7 +281,6 @@ body {
 }
 
 /* EDUCATION */
-
 .education-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -291,7 +291,11 @@ body {
     padding: 20px 15px;
     border-radius: 14px;
     border: 1px solid #ccecae;
-    background: linear-gradient(140deg, #f5ffe9, #e2ffc8);
+    background: linear-gradient(
+        140deg,
+        #f5ffe9,
+        #e2ffc8
+    );
     transition: 0.25s;
 }
 
@@ -299,7 +303,7 @@ body {
 .skill-card:hover,
 .cert-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 9px 22px rgba(29, 94, 36, 0.10);
+    box-shadow: 0 9px 22px rgba(29, 94, 36, 0.1);
 }
 
 .card-icon {
@@ -333,8 +337,7 @@ body {
     color: var(--green);
 }
 
-/* SKILLS */
-
+/* TECHNICAL SKILLS */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -346,7 +349,11 @@ body {
     text-align: center;
     border: 1px solid #ccecae;
     border-radius: 14px;
-    background: linear-gradient(135deg, #f3ffe7, #e0ffc5);
+    background: linear-gradient(
+        135deg,
+        #f3ffe7,
+        #e0ffc5
+    );
     transition: 0.25s;
 }
 
@@ -362,8 +369,30 @@ body {
     line-height: 1.8;
 }
 
-/* PROJECTS */
+/* INDIVIDUAL TECHNOLOGY LOGOS */
+.tech-logos {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto 10px;
+}
 
+.tech-logo {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.tech-logo:hover {
+    transform: scale(1.15);
+}
+
+/* PROJECTS */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -443,14 +472,17 @@ body {
 }
 
 /* EVENTS */
-
 .event-card {
     display: flex;
     align-items: center;
     gap: 16px;
     padding: 18px;
     border-radius: 13px;
-    background: linear-gradient(90deg, #e6ffc9, #f5ffe9);
+    background: linear-gradient(
+        90deg,
+        #e6ffc9,
+        #f5ffe9
+    );
     border: 1px solid #d4efb7;
 }
 
@@ -469,7 +501,6 @@ body {
 }
 
 /* CERTIFICATIONS */
-
 .section-description {
     margin-top: -10px;
 }
@@ -514,9 +545,12 @@ body {
 }
 
 /* CONTACT */
-
 .contact-section {
-    background: linear-gradient(135deg, #f5ffe9, #e3ffc8);
+    background: linear-gradient(
+        135deg,
+        #f5ffe9,
+        #e3ffc8
+    );
 }
 
 .contact-intro {
@@ -589,12 +623,15 @@ body {
 }
 
 /* FOOTER */
-
 .footer {
     padding: 30px 20px;
     text-align: center;
     color: white;
-    background: linear-gradient(110deg, #03451f, #06381d);
+    background: linear-gradient(
+        110deg,
+        #03451f,
+        #06381d
+    );
 }
 
 .footer h2 {
@@ -625,8 +662,7 @@ body {
     text-decoration: underline;
 }
 
-/* RESPONSIVE */
-
+/* TABLET */
 @media (max-width: 900px) {
     .education-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -642,6 +678,7 @@ body {
     }
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
     .navbar {
         position: relative;
@@ -722,6 +759,7 @@ body {
     }
 }
 
+/* ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -730,4 +768,70 @@ body {
         animation: none !important;
         transition: none !important;
     }
+}
+.contact-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contact-card > span:nth-child(2) {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-card strong,
+.contact-card small {
+    display: block;
+    overflow-wrap: anywhere;
+}
+.contact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    padding: 5px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* Actual logo image from the images folder */
+.contact-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Optional backgrounds for logos with transparent images */
+.email-icon {
+    background: white;
+}
+
+.linkedin-icon {
+    background: white;
+}
+
+.github-icon {
+    background: white;
+}
+
+.whatsapp-icon {
+    background: white;
+}
+
+.contact-card strong {
+    font-size: 14px;
+}
+
+.contact-card small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.arrow {
+    color: var(--green);
+    font-size: 18px;
 }
