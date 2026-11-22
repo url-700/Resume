@@ -167,7 +167,7 @@ body {
     object-position: center 35%;
     border-radius: 50%;
     z-index: 2;
-    transform: scale(1.12);
+    transform: scale(1.05);
 }
 
 #photoFallback {
